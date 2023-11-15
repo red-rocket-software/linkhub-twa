@@ -1,0 +1,129 @@
+.section_0_frame {
+    position: absolute;
+    left: 0.89rem;
+    top: 0;
+    transition: all 0.5s ease;
+    opacity: 1;
+    height: 33rem;
+    width: 34.5rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 20px 2px #E72F3C;
+
+    &._hiden {
+        transition: all 0.5 ease;
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+}
+
+.section_1_frame {
+    position: absolute;
+    left: 0.938rem;
+    top: 0;
+    transition: all 0.5s ease;
+    opacity: 1;
+    height: 33rem;
+    width: 34.5rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 20px 2px #C8A529;
+
+    &._hiden {
+        transition: all 0.5 ease;
+        transition-delay: 0.15s;
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 835px) {
+    .section_0_frame {
+        left: 0;
+        height: 33rem;
+        width: 34.5rem;
+        box-shadow: 2px 2px 20px 2px #E72F3C;
+        margin-bottom: 0.2rem;
+
+        &.section_0_mobile_default {
+            opacity: 1;
+            height: 33rem;
+            width: 34.5rem;
+        }
+    }
+
+    .section_1_frame {
+        left: 0;
+        height: 33rem;
+        width: 34.5rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 20px 2px #C8A529;
+        margin-bottom: 0.2rem;
+
+        &.section_1_mobile_default {
+            opacity: 1;
+            height: 33rem;
+            width: 34.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .section_0_frame {
+        height: 27rem;
+        width: 28rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 20px 2px #E72F3C;
+        margin-bottom: 0.2rem;
+
+        &.section_0_mobile_default {
+            opacity: 1;
+            height: 27rem;
+            width: 28rem;
+        }
+    }
+
+    .section_1_frame {
+        height: 27rem;
+        width: 28rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 20px 2px #C8A529;
+        margin-bottom: 0.2rem;
+
+        &.section_1_mobile_default {
+            opacity: 1;
+            height: 27rem;
+            width: 28rem;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .section_0_frame {
+        position: initial;
+        height: 20rem;
+        width: 20rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 20px 2px #E72F3C;
+
+        &.section_0_mobile_default {
+            opacity: 1;
+            height: 27rem;
+            width: 28rem;
+        }
+    }
+
+    .section_1_frame {
+        position: initial;
+        height: 20rem;
+        width: 20rem;
+        border-radius: 1rem;
+        box-shadow: 2px 2px 20px 2px #C8A529;
+
+        &.section_1_mobile_default {
+            opacity: 1;
+            height: 27rem;
+            width: 28rem;
+        }
+    }
+}

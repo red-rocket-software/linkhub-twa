@@ -1,0 +1,400 @@
+//variables
+$color-white: #FFFFFF;
+$color-black: #231F20;
+$color-hovered-linkedIn: #0077B5;
+$color-hovered-facebook: #3B5998;
+$color-hovered-email: #C61625;
+$color-hovered-youtube: #E72F3C;
+$color-hovered-website: #C61625;
+$color-hovered-clutch: #FF3D2E;
+$color-hovered-link: #E72F3C;
+$color-hovered-tiktok: #000000;
+$color-hovered-twitter: #1DA1F2;
+$color-hovered-hand: #FFE450;
+$color-visited: #939393;
+$color-canvas-bg: #141b1f4d;
+
+
+
+
+
+// mixins
+@mixin typo-rockstar-person {
+  font-family: 'RockStar';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: $color-white;
+  text-shadow: 0px 4px 4px $color-canvas-bg;
+}
+
+@mixin typo-rockstar-company {
+  font-family: 'RockStar';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 34px;
+  letter-spacing: 0.03em;
+  color: $color-white;
+}
+
+@mixin typo-onest-default {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-black;
+}
+
+@mixin typo-onest-link {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25.5px;
+  color: $color-white;
+}
+
+@mixin type-onest-mobile {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: 0.03em;
+}
+
+@mixin typp-rockstar-mobile {
+  font-family: 'RockStar';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+}
+
+//styles
+.layout-wrapper {
+
+  canvas {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(200deg, 20%, 10%);
+  }
+
+  .person-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .flex-wrapper {
+      width: 100%;
+      max-width: 40rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .personal-data-container {
+        position: relative;
+        bottom: 14rem;
+        margin-bottom: 1.9rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .heading {
+          @include typo-rockstar-person;
+          margin-bottom: 1rem
+        }
+      }
+
+      .dropdown-container {
+        position: relative;
+        bottom: 14rem;
+        width: 100%;
+        margin-bottom: 9rem;
+
+        &>* {
+          @include typo-onest-default;
+        }
+      }
+    }
+
+  }
+
+  .company-info {
+    margin-bottom: 9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 15rem;
+
+    .flex-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 50rem;
+
+      .heading-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50rem;
+        margin-bottom: 2.5rem;
+
+        .heading {
+          @include typo-rockstar-company;
+          width: 40rem;
+          text-align: start;
+          margin-top: 3.5rem;
+        }
+
+
+      }
+
+      .links-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .frame-and-links-container {
+          display: flex;
+          justify-content: flex-end;
+          position: relative;
+          width: 50rem;
+          height: 35rem;
+
+          #section_0_mobile-link {
+            visibility: hidden;
+            @include typo-onest-link;
+            text-decoration: underline;
+
+            & :hover {
+              color: $color-hovered-link
+            }
+
+            & :focus {
+              color: $color-hovered-link
+            }
+
+            &._visible {
+              margin-top: 2.75rem;
+              margin-bottom: 2.25rem;
+              visibility: initial;
+            }
+          }
+
+          #section_1_mobile-link {
+
+            visibility: hidden;
+            @include typo-onest-link;
+            text-decoration: underline;
+
+            & :hover {
+              color: $color-hovered-link
+            }
+
+            & :focus {
+              color: $color-hovered-link
+            }
+
+            &._visible {
+              visibility: initial;
+              margin-top: 2.75rem;
+              margin-bottom: 2.25rem;
+              // margin-left: 0.938rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .layout-wrapper {
+    .person-info {
+      .flex-wrapper {
+        width: 35rem;
+      }
+    }
+
+    .company-info {
+      .flex-wrapper {
+        width: 35rem;
+
+        .heading-container {
+          width: 35rem;
+
+          .heading {
+            font-size: 30px;
+          }
+
+          .logo {
+            margin-right: 2rem;
+          }
+        }
+
+        .links-container {
+          .frame-and-links-container {
+            width: 35rem;
+            height: 45rem;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+
+            #section_0_mobile-link {
+              margin-bottom: 2.5rem;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .layout-wrapper {
+
+    .person-info {
+
+      .flex-wrapper {
+        width: 28rem;
+
+        .personal-data-container {
+          bottom: 12rem;
+        }
+
+        .dropdown-container {
+          bottom: 12rem;
+        }
+      }
+    }
+
+    .company-info {
+      margin-left: auto;
+      margin-right: auto;
+
+      .flex-wrapper {
+        width: 28rem;
+
+        .heading-container {
+          width: 28rem;
+
+          .heading {
+            font-size: 25px;
+          }
+
+          .logo {
+            margin-right: 2rem;
+          }
+        }
+
+        .links-container {
+          .frame-and-links-container {
+            width: 31rem;
+            height: 40rem;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+
+            #section_0_mobile-link {
+              margin-bottom: 2.5rem;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .person-info {
+      width: 22.5rem;
+
+      .flex-wrapper {
+        .personal-data-container {
+          bottom: 8.8rem;
+
+          .heading {
+            @include type-onest-mobile;
+            font-size: 22px;
+            margin-bottom: 0.5rem;
+            z-index: 1;
+          }
+        }
+      }
+
+
+      .flex-wrapper {
+        width: 22.5rem;
+
+        .dropdown-container {
+          width: 22.5rem;
+          bottom: 10rem;
+        }
+      }
+    }
+  }
+}
+
+#section_1 {
+  margin-bottom: 0rem;
+}
+
+#section_0_mobile-link {
+
+  @include typo-onest-link;
+  text-decoration: underline;
+  visibility: hidden;
+
+  & :hover {
+    color: $color-hovered-link
+  }
+
+  & :focus {
+    color: $color-hovered-link
+  }
+
+  &._visible {
+    visibility: initial;
+    margin-top: 2.75rem;
+    margin-bottom: 1.25rem;
+    margin-left: 0.938rem;
+  }
+}
+
+#section_1_mobile-link {
+
+  @include typo-onest-link;
+  text-decoration: underline;
+  visibility: hidden;
+
+  & :hover {
+    color: $color-hovered-link
+  }
+
+  & :focus {
+    color: $color-hovered-link
+  }
+
+  &._visible {
+    visibility: initial;
+    margin-top: 2.75rem;
+    margin-bottom: 1.25rem;
+    margin-left: 0.938rem;
+  }
+}

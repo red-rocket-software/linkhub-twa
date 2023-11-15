@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "RockStar";
+  src: local("RS-extrabold.otf"),
+    url("./fonts//RSRockStar/RS-extrabold.otf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "Onest";
+  src: local("OnestMedium1602-hint.woff"),
+    url("./fonts//Onest//WOFF/OnestMedium1602-hint.woff") format("woff");
+}
+
+$color-canvas-bg: #141b1f4d;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  background-color: $color-canvas-bg;
+  overflow-x: hidden;
+  background-color: hsl(200deg, 20%, 10%);
+
+
+
+  ._disable-scroll {
+    overflow: hidden
+  }
+
+  body {
+    width: 100%;
+    background-color: $color-canvas-bg;
+    // background-color: hsl(200deg, 20%, 10%);
+
+    #root {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      // background-color: hsl(200deg, 20%, 10%);
+
+
+      .App {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        // background-color: hsl(200deg, 20%, 10%);
+
+      }
+    }
+  }
+}
